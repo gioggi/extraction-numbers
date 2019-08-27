@@ -25,10 +25,14 @@ class ExtractionPage extends React.Component {
     changeNumber() {
         let min = this.state.numberMin;
         let max = this.state.numberMax;
-        this.state.numbers=  [];
-        this.state.numbersObject=  [];
-        this.state.on=   true;
-        for (let i = 0; i < this.state.quantiyNumber; ++i) {
+        this.state.numbers = [];
+        this.state.numbersObject = [];
+        this.state.on = true;
+        let quantity = (this.state.quantiyNumber > (max - min) && this.state.quantiyNumber > (min - max)) ? (max - min) : this.state.quantiyNumber;
+        if (quantity > 10){
+            quantity = 10
+    }
+        for (let i = 0; i < quantity; ++i) {
             let x = this.generateRandom(min, max);
             this.state.numbers.push(x) ;
             let timeForTransition = 500 +  ((i+1) * 200);

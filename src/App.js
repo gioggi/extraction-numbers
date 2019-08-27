@@ -2,10 +2,9 @@ import React from 'react';
 import './App.css';
 import Homepage from './scenes/Homepage'
 function App() {
-    let backgroundImageUrl = "/backgroundImage.jpeg";
     let ownerName = "Anna";
     let divHomeStyle = {
-        backgroundImage: `url(${backgroundImageUrl})`,
+        backgroundColor: `green`,
         height: "800px",
         width: "100%"
     };
